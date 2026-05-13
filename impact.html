@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>100 Ellas Capital</title>
+    <meta name="description" content="100 Ellas Capital website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylecss.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+      
+          <!-- Desktop nav (unchanged) -->
+          <nav>
+            <ul>
+              <li><a href="about.html" class="nav-link">ABOUT</a></li>
+              <li><a href="impact.html" class="nav-link">IMPACT MAP</a></li>
+              <li class="logo"><a href="index.html"><img src="10.png"></a></li>
+              <li><a href="insights.html" class="nav-link">INSIGHTS</a></li>
+              <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+            </ul>
+          </nav>
+      
+          <!-- Mobile: logo + hamburger -->
+          <div class="nav-header-row">
+            <a href="index.html"><img src="10.png" style="max-width:110px;display:block;"></a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+      
+          <!-- Mobile dropdown -->
+          <div class="mobile-menu" id="mobile-menu">
+            <a href="about.html">ABOUT</a>
+            <a href="impact.html">IMPACT MAP</a>
+            <a href="insights.html">INSIGHTS</a>
+            <a href="contact.html">CONTACT</a>
+          </div>
+      
+        </div>
+      </header>
+
+      <section class="page-hero">
+        <h1>Your Impact Investment <span>Roadmap</span></h1>
+        <p>A 5-step guide to evaluate opportunities and build an impact thesis with clarity and confidence.</p>
+      </section>
+    
+      <!-- ROADMAP -->
+      <section class="roadmap-section">
+    
+        <div class="hint-bar">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 11V6a2 2 0 0 0-4 0v5M14 10V4a2 2 0 0 0-4 0v6M10 10.5V6a2 2 0 0 0-4 0v8l-1-1a2 2 0 0 0-3 3l4 4a6 6 0 0 0 6 0 6 6 0 0 0 6-6v-2a2 2 0 0 0-4 0"/>
+          </svg>
+          Click each step on the roadmap to explore key questions and insights
+        </div>
+    
+        <div class="roadmap-wrapper">
+            <svg class="roadmap-svg" viewBox="0 0 1100 600" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="roadGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:var(--step-1)" />
+                        <stop offset="25%" style="stop-color:var(--step-2)" />
+                        <stop offset="50%" style="stop-color:var(--step-3)" />
+                        <stop offset="75%" style="stop-color:var(--step-4)" />
+                        <stop offset="100%" style="stop-color:var(--step-5)" />
+                    </linearGradient>
+                </defs>
+        
+                <path class="path-bg" d="M0,300 C150,300 150,150 300,200 C450,250 550,150 700,200 C850,250 850,300 1000,300" />
+                <path class="path-main" d="M0,300 C150,300 150,150 300,200 C450,250 550,150 700,200 C850,250 850,300 1000,300" />
+                <path class="path-dashed" d="M0,300 C150,300 150,150 300,200 C450,250 550,150 700,200 C850,250 850,300 1000,300" />
+        
+                <!-- Nodes -->
+                <g class="step-group" onclick="showCard(1, event)">
+                    <line class="connector-line" x1="150" y1="230" x2="150" y2="100" />
+                    <circle class="node-circle" cx="150" cy="100" r="25" fill="var(--step-1)" />
+                    <text class="node-text" x="150" y="100">1</text>
+                </g>
+                <g class="step-group" onclick="showCard(2, event)">
+                    <line class="connector-line" x1="325" y1="208" x2="325" y2="100" />
+                    <circle class="node-circle" cx="325" cy="100" r="25" fill="var(--step-2)" />
+                    <text class="node-text" x="325" y="100">2</text>
+                </g>
+                <g class="step-group" onclick="showCard(3, event)">
+                    <line class="connector-line" x1="500" y1="218" x2="500" y2="100" />
+                    <circle class="node-circle" cx="500" cy="100" r="25" fill="var(--step-3)" />
+                    <text class="node-text" x="500" y="100">3</text>
+                </g>
+                <g class="step-group" onclick="showCard(4, event)">
+                    <line class="connector-line" x1="675" y1="193" x2="675" y2="100" />
+                    <circle class="node-circle" cx="675" cy="100" r="25" fill="var(--step-4)" />
+                    <text class="node-text" x="675" y="100">4</text>
+                </g>
+                <g class="step-group" onclick="showCard(5, event)">
+                    <line class="connector-line" x1="850" y1="250" x2="850" y2="100" />
+                    <circle class="node-circle" cx="850" cy="100" r="25" fill="var(--step-5)" />
+                    <text class="node-text" x="850" y="100">5</text>
+                </g>
+
+           
+                <g class="label-group">
+                    <!-- Y=420 is higher up, making it more likely to stay inside your current box -->
+                    <text x="180" y="300" class="label-title" fill="var(--navy)">PROBLEM</text>
+                    <text x="180" y="320" class="label-sub">Understand the need</text>
+                  
+                    <text x="330" y="280" class="label-title" fill="var(--step-2)">SOLUTION</text>
+                    <text x="330" y="300" class="label-sub">Assess the fit</text>
+                  
+                    <text x="500" y="260" class="label-title" fill="var(--step-3)">STRATEGY</text>
+                    <text x="500" y="280" class="label-sub">Evaluate the plan</text>
+                  
+                    <text x="700" y="280" class="label-title" fill="var(--step-4)">DESIRED OUTCOME</text>
+                    <text x="700" y="300" class="label-sub">Define success</text>
+                  
+                    <text x="850" y="340" class="label-title" fill="var(--step-5)">EVALUATE RESULTS</text>
+                    <text x="850" y="360" class="label-sub">Check the evidence</text>
+                  </g>
+
+                  <!-- Background Illustrations -->
+<g class="illustrations" opacity="0.4">
+    <!-- Mountains (Left) -->
+    <path d="M-50,350 L50,200 L150,350 Z" fill="none" stroke="#d1d1d1" stroke-width="2" />
+    <path d="M20,350 L100,230 L180,350 Z" fill="none" stroke="#d1d1d1" stroke-width="2" /> 
+
+    </g>
+    
+<g class="illustrations">
+    <path d="M180,150 Q190,130 210,130 Q230,110 255,130 Q280,130 290,150" 
+          fill="none" 
+          stroke="#d1d1d1" 
+          stroke-width="2" 
+          stroke-linecap="round" />
+      <path d="M700,130 Q710,110 730,110 Q750,90 775,110 Q800,110 810,130" 
+          fill="none" 
+          stroke="#d1d1d1" 
+          stroke-width="2" 
+          stroke-linecap="round" />
+  </g>
+
+            </svg>
+
+            
+        
+            <div class="info-card" id="info-card">
+                <button class="close-btn" onclick="hideCard()">&times;</button>
+                <h3 id="card-title">TITLE</h3>
+                <div id="card-content"></div>
+            </div>
+        </div>
+    </section>
+    
+
+      <footer>
+        <div class="container">
+            <img src="9.png">
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/raquelbell/" class="social-link">LinkedIn</a> <a href="contact.html" class="social-link">Contact</a> </div>
+        </div>
+    
+        <div class="disclaimer">
+            <p>DISCLAIMER: The content and materials shared through 100 Ellas are provided for educational and informational purposes only and should not be considered investment, legal, tax, or financial advice. Nothing on this website constitutes a recommendation, solicitation, or offer to buy or sell any security or investment product.<br>
+
+                Investing in early-stage companies and private markets involves substantial risk, including the potential loss of capital, limited liquidity, and uncertainty of returns. Any examples, frameworks, opinions, or personal experiences shared are intended to support learning and independent thinking, not individualized investment decisions.<br>
+                
+                You should conduct your own due diligence and consult with qualified financial, legal, or tax professionals before making any investment decisions. Past performance does not guarantee future results.</p>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; All Rights Reserved.</p>
+
+        </div>
+    </footer>
+    
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+          <p class="cookie-text">
+            We use cookies to improve your experience on our website. By continuing to browse, you agree to our use of cookies.
+          </p>
+          <div class="cookie-buttons">
+            <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Accept</button>
+            <button id="cookie-decline" class="cookie-btn cookie-btn-decline">Decline</button>
+          </div>
+        </div>
+      </div>
+
+    <script src="javascript.js"></script>
+    
+        </body>
+        </html>
+
+            

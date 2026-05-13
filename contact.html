@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>100 Ellas Capital</title>
+    <meta name="description" content="100 Ellas Capital website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylecss.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+      
+          <!-- Desktop nav (unchanged) -->
+          <nav>
+            <ul>
+              <li><a href="about.html" class="nav-link">ABOUT</a></li>
+              <li><a href="impact.html" class="nav-link">IMPACT MAP</a></li>
+              <li class="logo"><a href="index.html"><img src="10.png"></a></li>
+              <li><a href="insights.html" class="nav-link">INSIGHTS</a></li>
+              <li><a href="contact.html" class="nav-link">CONTACT</a></li>
+            </ul>
+          </nav>
+      
+          <!-- Mobile: logo + hamburger -->
+          <div class="nav-header-row">
+            <a href="index.html"><img src="10.png" style="max-width:110px;display:block;"></a>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+      
+          <!-- Mobile dropdown -->
+          <div class="mobile-menu" id="mobile-menu">
+            <a href="about.html">ABOUT</a>
+            <a href="impact.html">IMPACT MAP</a>
+            <a href="insights.html">INSIGHTS</a>
+            <a href="contact.html">CONTACT</a>
+          </div>
+      
+        </div>
+      </header>
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">CONTACT US</h2>
+            
+            <form id="contact-form" action="https://formspree.io/f/xzdoeyvg" method="post">
+                <div class="form-group">
+                    <label for="name">Name:<span class="required">(Required)</span></label>
+                    <input type="text" id="name" name="name" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:<span class="required">(Required)</span></label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number">
+                </div>
+        
+                <div class="form-group">
+                    <label for="message">Message:<span class="required">(Required)</span></label>
+                    <textarea id="message" name="message" rows="8" placeholder="Message" required></textarea>
+                </div>
+        
+                <button class="btn" type="submit">Submit</button>
+            </form>
+    
+            <div id="thanks-message" style="display: none; text-align: center; padding: 40px 0;">
+                <h2 style="font-family: inherit;">THANK YOU</h2>
+                <p>Your inquiry has been sent. we will be in touch shortly.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <img src="9.png">
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/raquelbell/" class="social-link">LinkedIn</a> <a href="contact.html" class="social-link">Contact</a> </div>
+        </div>
+    
+        <div class="disclaimer">
+            <p>DISCLAIMER: The content and materials shared through 100 Ellas are provided for educational and informational purposes only and should not be considered investment, legal, tax, or financial advice. Nothing on this website constitutes a recommendation, solicitation, or offer to buy or sell any security or investment product.<br>
+
+                Investing in early-stage companies and private markets involves substantial risk, including the potential loss of capital, limited liquidity, and uncertainty of returns. Any examples, frameworks, opinions, or personal experiences shared are intended to support learning and independent thinking, not individualized investment decisions.<br>
+                
+                You should conduct your own due diligence and consult with qualified financial, legal, or tax professionals before making any investment decisions. Past performance does not guarantee future results.</p>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; All Rights Reserved.</p>
+
+        </div>
+    </footer>
+
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-content">
+          <p class="cookie-text">
+            We use cookies to improve your experience on our website. By continuing to browse, you agree to our use of cookies.
+          </p>
+          <div class="cookie-buttons">
+            <button id="cookie-accept" class="cookie-btn cookie-btn-accept">Accept</button>
+            <button id="cookie-decline" class="cookie-btn cookie-btn-decline">Decline</button>
+          </div>
+        </div>
+      </div>
+
+    <script src="javascript.js"></script>
+
+    </body>
+    </html>

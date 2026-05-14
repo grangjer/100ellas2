@@ -72,28 +72,48 @@ const card = document.getElementById('info-card');
 const cTitle = document.getElementById('card-title');
 const cContent = document.getElementById('card-content');
 
+let activeStep = null;
+
 function showCard(step, event) {
-    event.stopPropagation();
-    const data = contentData[step];
-    
-    cTitle.innerText = data.title;
-    cTitle.style.color = `var(--step-${step})`;
+  event.stopPropagation();
 
-    let listHtml = '<ul>';
-    data.list.forEach(item => { listHtml += `<li>${item}</li>`; });
-    listHtml += '</ul>';
-    listHtml += `<div class="card-footer ${data.fClass}">${data.footer}</div>`;
-    
-    cContent.innerHTML = listHtml;
+  // If clicking the same step, toggle it closed
+  if (activeStep === step && card.classList.contains('active')) {
+    hideCard();
+    return;
+  }
 
-    const rect = event.currentTarget.getBoundingClientRect();
-    const wrapperRect = document.querySelector('.roadmap-wrapper').getBoundingClientRect();
-    
-    card.style.left = (rect.left - wrapperRect.left) + "px";
-    card.style.top = (rect.top - wrapperRect.top + 60) + "px";
+  activeStep = step;
+  const data = contentData[step];
 
-    card.classList.add('active');
+  cTitle.innerText = data.title;
+  cTitle.style.color = `var(--step-${step})`;
+
+  let listHtml = '<ul>';
+  data.list.forEach(item => { listHtml += `<li>${item}</li>`; });
+  listHtml += '</ul>';
+  listHtml += `<div class="card-footer ${data.fClass}">${data.footer}</div>`;
+
+  cContent.innerHTML = listHtml;
+
+  // Position below the road, not next to the click
+  card.style.left = '';
+  card.style.top = '';
+  card.style.position = 'relative';
+
+  card.classList.add('active');
+
+  // Smooth scroll to card
+  setTimeout(() => {
+    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }, 50);
 }
 
-function hideCard() { card.classList.remove('active'); }
-document.addEventListener('click', (e) => { if (!card.contains(e.target)) hideCard(); });
+function hideCard() {
+  card.classList.remove('active');
+  activeStep = null;
+}
+
+document.addEventListener('click', (e) => {
+  if (!card.contains(e.target)) hideCard();
+});

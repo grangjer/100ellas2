@@ -1033,22 +1033,6 @@ select:hover {
     border-radius: 10px;
   }
   
-  @media (max-width: 700px) {
-    .card-grid {
-      grid-template-columns: 1fr;
-      gap: 30px;
-    }
-  
-    .card {
-      border-right: none;
-      border-bottom: 1.5px solid #ba8d4f;
-      padding-bottom: 30px;
-    }
-  
-    .card:last-child {
-      border-bottom: none;
-    }
-  }
 
 .insights-articles-section {
     background-color: #f7eee8;
@@ -1113,7 +1097,57 @@ select:hover {
     color: #444;
     text-align: center;
   }
+
+  .instrument-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.instrument-list li {
+  font-family: var(--sans-font);
+  font-size: 0.95rem;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.instrument-list li strong {
+  font-family: var(--serif-font); /* Mixing the serif back in for key terms */
+  font-weight: 600;
+  margin-right: 8px;
+}
   
+
+/* Portfolio Specific Styling */
+.portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.tag {
+  font-family: var(--sans-font);
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+  border: 1px solid var(--divider-color);
+  border-radius: 20px; /* Clean, rounded look */
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  background-color: #fff;
+}
+
+.article-row.reverse .article-text-col {
+  text-align: left; /* Keeps the body text readable even when column is flipped */
+}
+
   .butn{
     font-size: 16px;
 	text-decoration: solid;
@@ -1299,6 +1333,12 @@ select:hover {
 
   /* --- ABOUT PAGE MEDIA QUERY--- */
 
+  @media (max-width: 700px) {
+  html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+}
 
 @media (max-width: 700px) {
 
@@ -1429,50 +1469,10 @@ select:hover {
   @media (max-width: 700px) {
 
     /* --- Card Grid --- */
-    .card-grid {
-      grid-template-columns: 1fr;
-      gap: 30px;
-    }
-  
-    .card {
-      border-right: none;
-      border-bottom: 1.5px solid #ba8d4f;
-      padding: 0 0 30px 0;
-      align-items: stretch;
-    }
-  
-    .card:last-child {
-      border-bottom: none;
-    }
-  
-    .card-title-link {
-      min-height: auto;
-      font-size: 20px;
-      height: 60px;
-    }
-  
-    @media (max-width: 700px) {
-        .image-placeholder {
-          width: 100%;
-          height: auto !important;
-          aspect-ratio: unset !important;
-          background-color: transparent !important;
-          background-image: none !important;
-          border-radius: 10px;
-          overflow: hidden;
-
-        }
-      
-        .image-placeholder img {
-          width: 100% !important;
-          height: auto !important;
-          object-fit: unset !important;
-          display: block !important;
-          border-radius: 10px;
-          margin-left: 50px;
-          
-        }
-      }
+   
+.card-grid{
+  display: none;
+}
 
     /* --- Article Rows --- */
     .article-row,
@@ -1480,7 +1480,7 @@ select:hover {
       grid-template-columns: 1fr;
       grid-template-rows: auto auto auto;
       gap: 20px;
-      padding: 40px 0;
+      padding: 5px 0;
     }
   
     .article-row.reverse .article-title-col {
@@ -1531,7 +1531,15 @@ select:hover {
     .insights-section .gold-rule {
       margin-bottom: 20px;
     }
+
+    .butn{
+      margin-left: 30%;
+      width: 200px;
+      font-size: 12px;
+      margin-top: 30px;
+    }
   }
+
 
   /*---- impact map ------*/
 
@@ -1551,25 +1559,27 @@ select:hover {
 
 @media (max-width: 700px) {
   .roadmap-wrapper {
-    margin-left: 0;
-    padding-top: 0;
-    overflow-x: hidden;
+    margin-left: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    width: 100%;
   }
 
   .roadmap-svg {
-    display: none; /* hide the road on mobile */
+    display: none !important; /* hide SVG completely on mobile */
   }
 
-  /* Show steps as vertical cards instead */
   .mobile-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 10px 0;
-  }
+  display: flex;
+  flex-direction: column; /* ← make sure this is column not row */
+  gap: 16px;
+  padding: 10px 0;
+  width: 100%;
+}
 
   .roadmap-section {
-    padding: 10px;
+    padding: 10px !important;
+    overflow-x: hidden;
   }
 
   .hint-bar {
@@ -1882,18 +1892,15 @@ select:hover {
 
 /* Hide mobile steps on desktop */
 .mobile-steps {
-  display: none;
+  display:none;
 }
 
 .mobile-step {
+  width: 100%;
   cursor: pointer;
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.2s;
-}
-
-.mobile-step:hover {
-  transform: translateY(-2px);
 }
 
 .mobile-step-header {
@@ -1901,6 +1908,11 @@ select:hover {
   align-items: center;
   gap: 14px;
   padding: 14px 18px;
+  width: 100%;
+}
+
+.mobile-step:hover {
+  transform: translateY(-2px);
 }
 
 .mobile-num {
@@ -2054,3 +2066,11 @@ select:hover {
 
 .close-btn { position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 20px; cursor: pointer; color: #bbb; }
   
+
+.signature{
+  font-size: 10px;
+}
+
+.signature:hover{
+  color: #b59b6a;
+}

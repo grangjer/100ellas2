@@ -898,6 +898,10 @@ select:hover {
 
 /* --- THIRD SECTION: GET IN TOUCH --- */
 
+.get-in-touch{
+	margin-right: 10%;
+}
+
 .footer-section {
 	background-color: #020c45;
     padding: 100px 0 0 0; 
